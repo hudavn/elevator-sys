@@ -46,7 +46,7 @@ def requestSystem():
             floor = int(request.args['from'])
             direction = int(request.args['direction'])
 
-            if floor < elevator_system.numberOfFloors:
+            if floor <= elevator_system.numberOfFloors:
                 resp = elevator_system.request(direction, floor)
                 return jsonify(
                     {
@@ -157,4 +157,4 @@ if __name__ == "__main__":
                 '%(message)s'), 
         datefmt='%d-%b-%y %H:%M:%S',
         filename="./elevator/logs/runtime.log", filemode='w')
-    server.run()
+    server.run(host="localhost", port=8000)

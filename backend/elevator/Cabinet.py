@@ -36,6 +36,7 @@ class Cabinet:
         if self.currentFloor == floor: 
             self.R()
             return True
+            
         if (self.currentFloor < floor and self.state == State.MOVEUP) or \
             (self.currentFloor > floor and self.state == State.MOVEDOWN) or \
             self.state == State.ACTIVE: 
@@ -92,7 +93,6 @@ class Cabinet:
                 else:
                     self.moveDown()
 
-        self.checkArrived() # In case request from current floor
         self.firstPick = None
 
         while self.state != State.ACTIVE:

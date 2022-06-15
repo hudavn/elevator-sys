@@ -38,7 +38,7 @@ class SystemManager:
         resp = OrderedDict()
         if index == None:
             resp["model"] =  "Campus Elevator System"
-            resp["version"] = "v1.0.1"
+            resp["version"] = "v1.0.2"
             resp["builder"] = "datnh2"
             resp["owner"] = "VNG Campus"
             resp["timestamp"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
@@ -112,13 +112,14 @@ class SystemManager:
                     choosenCabinet = StandardStrategy((self.requestQueue[0][1][1], self.requestQueue[0][1][2]), self.listOfCabinets)
                     if choosenCabinet: 
                         request = self.requestQueue.pop(0)[1]
-                        choosenCabinet.addDestination(request[1])
-                        self.servant.update({request[0]: (self.servant[request[0]][0], choosenCabinet)})
+                        if choosenCabinet.getPosition() != request[1]:
+                            choosenCabinet.addDestination(request[1])
+                            self.servant.update({request[0]: (self.servant[request[0]][0], choosenCabinet)})
 
-                        if choosenCabinet.state == State.ACTIVE:
-                            choosenCabinet.firstPick = request[1]
-                            choosenCabinet.setState(request[2])
-                            threading.Thread(target=choosenCabinet.serve).start()
+                            if choosenCabinet.state == State.ACTIVE:
+                                choosenCabinet.firstPick = request[1]
+                                choosenCabinet.setState(request[2])
+                                threading.Thread(target=choosenCabinet.serve).start()
                 else: 
                     request = self.requestQueue.pop(0)
                     choosenCabinet = request[1]
