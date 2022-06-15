@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-cd elevator-sys/backend
+cd elevator-sys
+git pull main
+cd backend
 gunicorn ElevatorSystemService:server
