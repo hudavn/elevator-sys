@@ -151,16 +151,7 @@ def method_not_allowed(e):
     ), 405
 
 
-if __name__ == "__main__":
-    args = sys.argv[1:]
-    global numOfCabinets, numOfFloors
+numOfFloors = 40
+numOfCabinets = 4
 
-    if len(args) != 3:
-        numOfFloors = 40
-        numOfCabinets = 2
-    else: 
-        # Handle arguments passed
-        pass
-
-    startService()
-    server.run()
+startService()
