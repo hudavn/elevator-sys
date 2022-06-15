@@ -8,15 +8,6 @@ import logging
 
 server = Flask(__name__)
 server.config["JSON_SORT_KEYS"] = False
-logging.basicConfig(level = logging.INFO, 
-        format=('%(levelname)s:\t'
-                '%(filename)s:'
-                '%(funcName)s:'
-                '%(lineno)d:'
-                '%(thread)d:\t'
-                '%(message)s'), 
-        datefmt='%d-%b-%y %H:%M:%S',
-        filename="./elevator/logs/runtime.log", filemode='w')
 
 
 def startService():
@@ -155,3 +146,15 @@ numOfFloors = 40
 numOfCabinets = 4
 
 startService()
+
+if __name__ == "__main__":
+    logging.basicConfig(level = logging.INFO, 
+        format=('%(levelname)s:\t'
+                '%(filename)s:'
+                '%(funcName)s:'
+                '%(lineno)d:'
+                '%(thread)d:\t'
+                '%(message)s'), 
+        datefmt='%d-%b-%y %H:%M:%S',
+        filename="./elevator/logs/runtime.log", filemode='w')
+    server.run()
