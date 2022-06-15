@@ -5,7 +5,7 @@ RUN apt update \
     && apt install -y git python3 python3-pip
 
 RUN git clone https://github.com/hudavn/elevator-sys.git
-RUN cd elevator-sys/backend && \
+RUN cd elevator-sys && \
     pip3 install -r requirements.txt
 
 ENTRYPOINT [ "/bin/bash", "/elevator-sys/entrypoint.sh" ]

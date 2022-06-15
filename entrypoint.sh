@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-cd /backend
+cd elevator-sys/backend
 gunicorn ElevatorSystemService:app
