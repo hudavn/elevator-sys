@@ -122,6 +122,7 @@ Big thanks to VNG Tech Fresher 2022 and trainers, buddies in ZaloPay.
 | ---------------- | -------------------------------- |
 | index            | Index of cabinet                 |
 | floor            | Current floor of cabinet         |
+| status           | Status of cabinet                |
 | destinationCount | Number of requested destinations |
 | destination      | List of destinations             |
 
@@ -152,11 +153,11 @@ Big thanks to VNG Tech Fresher 2022 and trainers, buddies in ZaloPay.
 #### `/servant`
 **Post new request to servant of a specified client (order) which is authorized by index and secret key**
 
-| Required  | Value                                 |
-| --------- | ------------------------------------- |
-| id      | Order ID |
-| key | Secret key associated with order ID      |
-destination | *Valid* destination *(Valid destination means that you cannot request a floor with the opposite direction from the original order)*
+| Required    | Value                                                                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| id          | Order ID                                                                                                                            |
+| key         | Secret key associated with order ID                                                                                                 |
+| destination | *Valid* destination *(Valid destination means that you cannot request a floor with the opposite direction from the original order)* |
 
 ```json
     POST http://35.241.110.157:8000/servant?id=3&key=e65e1a87d075409983fc9dc81a594493&destination=20
