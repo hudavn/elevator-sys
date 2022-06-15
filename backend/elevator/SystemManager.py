@@ -38,7 +38,7 @@ class SystemManager:
         resp = OrderedDict()
         if index == None:
             resp["model"] =  "Campus Elevator System"
-            resp["version"] = "v1.0.2"
+            resp["version"] = "v1.0.1"
             resp["builder"] = "datnh2"
             resp["owner"] = "VNG Campus"
             resp["timestamp"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
