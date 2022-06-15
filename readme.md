@@ -33,9 +33,9 @@ Big thanks to VNG Tech Fresher 2022 and trainers, buddies in ZaloPay.
 
 **All information about system**
 
-```JSON
-    GET http://35.241.110.157:8000/system
+> **GET** http://35.241.110.157:8000/system
 
+```JSON
     {
         "model": "Campus Elevator System",
         "version": "v1.0.0",
@@ -97,9 +97,9 @@ Big thanks to VNG Tech Fresher 2022 and trainers, buddies in ZaloPay.
 | -------- | ------------------------------------- |
 | id       | Valid floor (from 1 to highest floor) |
 
-```json
-    GET http://35.241.110.157:8000/cabin?id=1
+> **GET** http://35.241.110.157:8000/cabin?id=1
 
+```json
     {
         "index": 1,
         "floor": 12,
@@ -108,9 +108,11 @@ Big thanks to VNG Tech Fresher 2022 and trainers, buddies in ZaloPay.
         "destination": []
     }   
 ```
-```json
-    GET http://35.241.110.157:8000/cabin
+</br>
 
+> **GET** http://35.241.110.157:8000/cabin
+
+```json
     {
         "status": 400,
         "message": "The request could not be understood by the server 
@@ -135,8 +137,9 @@ Big thanks to VNG Tech Fresher 2022 and trainers, buddies in ZaloPay.
 | from      | Valid floor (from 1 to highest floor) |
 | direction | 0 - `Move down` / 1 - `Move up`       |
 
+> **POST** http://35.241.110.157:8000/order?from=10&direction=0
+
 ```json
-    POST http://35.241.110.157:8000/order?from=10&direction=0
     {
         "index": 12,
         "key": "07eee4959aaf1bceaeef259d08e968e7",
@@ -159,9 +162,9 @@ Big thanks to VNG Tech Fresher 2022 and trainers, buddies in ZaloPay.
 | key         | Secret key associated with order ID                                                                                                 |
 | destination | *Valid* destination *(Valid destination means that you cannot request a floor with the opposite direction from the original order)* |
 
-```json
-    POST http://35.241.110.157:8000/servant?id=3&key=e65e1a87d075409983fc9dc81a594493&destination=20
+> **POST** http://35.241.110.157:8000/servant?id=3&key=e65e1a87d075409983fc9dc81a594493&destination=20
 
+```json
     {
         "status": true,
         "message": "OK!"
