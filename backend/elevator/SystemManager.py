@@ -63,7 +63,7 @@ class SystemManager:
                 info['destinationCount'] = len(self.listOfCabinets[i].destination)
                 detail.append(info)
             
-            resp['requests'] =len(queue)
+            resp['requests'] = len(queue)
             resp['queue'] = queue
             resp['detail'] = detail
         else:
