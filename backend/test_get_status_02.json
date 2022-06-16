@@ -1,9 +1,9 @@
 {
     "model": "Campus Elevator System",
-    "version": "v1.0.0",
+    "version": "v1.0.1",
     "builder": "datnh2",
     "owner": "VNG Campus",
-    "timestamp": "06/15/2022 21:28:31",
+    "timestamp": "06/16/2022 05:40:52",
     "status": "ACTIVE",
     "cabinets": 4,
     "floors": 40,
@@ -34,19 +34,19 @@
         },
         {
             "index": 1,
-            "floor": 4,
+            "floor": 6,
             "status": "INACTIVE",
             "destinationCount": 0
         },
         {
             "index": 2,
-            "floor": 24,
+            "floor": 36,
             "status": "ACTIVE",
             "destinationCount": 0
         },
         {
             "index": 3,
-            "floor": 3,
+            "floor": 22,
             "status": "INACTIVE",
             "destinationCount": 0
         }

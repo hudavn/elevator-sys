@@ -143,7 +143,7 @@ def method_not_allowed(e):
 
 
 numOfFloors = 40
-numOfCabinets = 4
+numOfCabinets = 2
 
 startService()
 
