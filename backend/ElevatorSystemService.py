@@ -157,4 +157,4 @@ if __name__ == "__main__":
                 '%(message)s'), 
         datefmt='%d-%b-%y %H:%M:%S',
         filename="./elevator/logs/runtime.log", filemode='w')
-    server.run(host="localhost", port=8000)
+    server.run(host="0.0.0.0", port=8000)
