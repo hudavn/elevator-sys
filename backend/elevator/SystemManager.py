@@ -112,14 +112,13 @@ class SystemManager:
                     choosenCabinet = StandardStrategy((self.requestQueue[0][1][1], self.requestQueue[0][1][2]), self.listOfCabinets)
                     if choosenCabinet: 
                         request = self.requestQueue.pop(0)[1]
-                        if choosenCabinet.getPosition() != request[1]:
-                            choosenCabinet.addDestination(request[1])
-                            self.servant.update({request[0]: (self.servant[request[0]][0], choosenCabinet)})
-
-                            if choosenCabinet.state == State.ACTIVE:
-                                choosenCabinet.firstPick = request[1]
-                                choosenCabinet.setState(request[2])
-                                threading.Thread(target=choosenCabinet.serve).start()
+                        choosenCabinet.addDestination(request[1])
+                        self.servant.update({request[0]: (self.servant[request[0]][0], choosenCabinet)})
+            
+                        if choosenCabinet.state == State.ACTIVE and choosenCabinet.getPosition() != request[1]:
+                            choosenCabinet.firstPick = request[1]
+                            choosenCabinet.setState(request[2])
+                            threading.Thread(target=choosenCabinet.serve).start()
                 else: 
                     request = self.requestQueue.pop(0)
                     choosenCabinet = request[1]
